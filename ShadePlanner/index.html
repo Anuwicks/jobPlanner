@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Courgette"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.css" />
+    <title>Job Planner</title>
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container-fluid ">
+      <div class="row justify-content-center mx-auto ">
+        <div class="col-11 mx-auto pt-3">
+          <!-- title -->
+          <h2 class="text-uppercase underline mb-4">Marquee Planner</h2>
+          <div class="row">
+            <div class="col-md-5 my-3">
+              <!-- budget feedback -->
+              <div class="marquee-feedback alert alert-danger text-capitalize">
+                Alert
+              </div>
+              <!-- Marquee Input form -->
+              <form
+                id="marquee-form"
+                class=" budget-form justify-content-center mx-auto"
+              >
+                <div class="row justify-content-center">
+                  <h5 class="info-title ">Marquee Breakdown</h5>
+                </div>
+                <div class="row justify-content-center">
+                  <span class="budget-icon"
+                    ><span class="budget-icon">
+                      <span class="showSpaces"></span>
+                      <img src="img/6x3.png"/></span
+                  ></span>
+                </div>
+                <div class="form-group">
+                  <label for="3x3-input">3x3:</label>
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="3x3-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="3x6-input">3x6:</label>
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="3x6-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="6x6-input">6x6:</label>
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="6x6-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="3x4.5-input">3x4.5:</label>
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="3x4.5-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="6x4.5-input">6x4.5:</label>
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="6x4.5-input"
+                  />
+                </div>
+
+                <!-- submit button -->
+                <div class="col text-center">
+                  <button
+                    type="submit"
+                    class="btn text-capitalize budget-submit "
+                    id="budget-submit"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-5 my-3 columnBorder ">
+              <!-- app info -->
+              <div class="row my-3 row-bordered ">
+                <div class="col-6 text-center">
+                  <h6 class="info-title">Weights</h6>
+                  <span class="budget-icon"><img src="img/weight.png"/></span>
+                  <div
+                    class="row mt-2 justify-content-center  showSpaces budget"
+                  >
+                    <span class="leg">4/Leg: </span
+                    ><span class="weight" id="4wt-count">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="leg">5/Leg: </span
+                    ><span class="weight" id="5wt-count">0</span>
+                  </div>
+                </div>
+                <div class="col-6 text-center ">
+                  <h6 class="info-title">Stillages</h6>
+                  <span class="budget-icon"><img src="img/stillage.png"/></span>
+                  <div class="row mt-2 justify-content-center budget">
+                    <span class="weight" id="4wt-stil"> 0</span>
+                  </div>
+                  <div class="row mt-2 justify-content-center budget">
+                    <span class="weight" id="5wt-stil"> 0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3 row-bordered">
+                <div class="col-6 text-center">
+                  <h6 class="info-title">Walls</h6>
+                  <h6 class="bold">No Front</h6>
+                  <span class="budget-icon"><img src="img/walls.png"/></span>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall3m">3m Walls: </span
+                    ><span class="weight" id="3m-wall">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall6m">6m Walls: </span
+                    ><span class="weight" id="6m-wall">0</span>
+                  </div>
+                </div>
+                <div class="col-6 text-center">
+                  <h6 class="info-title">Bundles</h6>
+                  <h6 class="bold">No Front</h6>
+                  <span class="budget-icon"><img src="img/bundles.png"/></span>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces  budget"
+                  >
+                    <span class="wall3m">3m Bndls: </span
+                    ><span class="weight" id="3m-bundle">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall6m">6m Bndls: </span
+                    ><span class="weight" id="6m-bundle">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col-6 text-center">
+                  <h6 class="info-title">Walls</h6>
+                  <h6 class="bold">W/ Front</h6>
+                  <span class="budget-icon"><img src="img/walls2.png"/></span>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall3m">3m Walls: </span
+                    ><span class="weight" id="3m-front">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall6m">6m Walls: </span
+                    ><span class="weight" id="6m-front">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall4m">4.5m Walls: </span
+                    ><span class="weight" id="4m-front">0</span>
+                  </div>
+                </div>
+                <div class="col-6 text-center">
+                  <h6 class="info-title">Bundles</h6>
+                  <h6 class="bold">W/ Front</h6>
+                  <span class="budget-icon"><img src="img/bundles.png"/></span>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces  budget"
+                  >
+                    <span class="wall3m">3m Bndls: </span
+                    ><span class="weight" id="3m-front-bundle">0</span>
+                  </div>
+                  <div
+                    class="row mt-2 justify-content-center showSpaces budget"
+                  >
+                    <span class="wall6m">6m Bndls: </span
+                    ><span class="weight" id="6m-front-bundle">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- script js -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
